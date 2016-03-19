@@ -1,0 +1,29 @@
+<template name="homepage">
+  <h1 class="title">Project A-Wave</h1>
+  <div class="category">
+  </div>
+  <div class="buttons">
+    <div class="btn-group btn-group-justified btn-group-raised">
+      <a href="#" class="btn btn-success"><i class="mdi mdi-play"></i></a>
+      <a href="#" class="btn btn-success"><i class="mdi mdi-pause"></i></a>
+    </div>
+    <div class="btn-group btn-group-justified btn-group-raised">
+      <a href="#" class="btn btn-success">Next Track</a>
+    </div>
+  </div>
+  <div class="modal cat-select">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title">Select music category you want to hear:</h4>
+        </div>
+        <div class="modal-body">
+          {{#each categories}}
+          <a href="#" class="btn cat btn-raised btn-primary" data-cat="{{this}}">{{this}}</a>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
