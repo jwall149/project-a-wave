@@ -1,10 +1,8 @@
-const MUSIC_CATEGORY = ['classical', 'guitar', 'jazz', 'piano', 'violin'];
+const MUSIC_CATEGORY = ['classical', 'guitar', 'violin'];
 const TRACKLISTS = {
   classical: ['ballade_no_4_op_52_chopin.mp3', 'demicheli_geminiani.mp3', 'fiati_di_parma_thuille.mp3', 'mazeppa_finale_liszt.mp3', 'piano_concerto_no_10_mozart.mp3'],
-  guitar: [],
-  jazz: [],
-  piano: [],
-  violin: []
+  guitar: ['Aubade-CinziaMilani-3728298_hq.mp3', 'GymnopedieNo1-VariousArtists-Album_q53g.mp3', 'KoyunbabaSuiteOp.19I.Moderato-CinziaMilani-3728292_hq.mp3', 'PreludioPerCinziaMilani-CinziaMilani-3728291_hq.mp3', 'RomanzaSenzaParole-CinziaMilani-3728304_hq.mp3'],
+  violin: ['valse_triste_franz_von_vecsey.mp3', 'violin_partita_no_1_part_1_allemanda_bach.mp3', 'violin_partita_no_1_part_2_double_bach.mp3', 'violin_partita_no_1_part_3_corrente_bach.mp3', 'violin_sonata_jan_brandts_buys.mp3']
 }
 
 let currentTrackList = [];
@@ -28,7 +26,7 @@ Template.homepage.rendered = () => {
 
 Template.homepage.events({
   'click .title': () => {
-    $('.modal.cat-select').show();   
+    $('.modal.cat-select').show();
   },
   'click .cat-select .btn.cat': (ev) => {
     const cat = $(ev.target).data('cat');
