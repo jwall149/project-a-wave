@@ -1,3 +1,4 @@
+const ASSETS_URL = 'https://raw.githubusercontent.com/jwall149/project-a-wave/master/public/assets';
 const MUSIC_CATEGORY = ['classical', 'guitar', 'violin'];
 const TRACKLISTS = {
   classical: ['ballade_no_4_op_52_chopin.mp3', 'demicheli_geminiani.mp3', 'fiati_di_parma_thuille.mp3', 'mazeppa_finale_liszt.mp3', 'piano_concerto_no_10_mozart.mp3'],
@@ -18,7 +19,7 @@ Template.homepage.rendered = () => {
   audioPlayer.onended = () => {
     currentTrack = currentTrackList.shift();
     if (currentTrack) {
-      audioPlayer.setAttribute('src', `assets/${Session.get('current_category')}/${currentTrack}`);
+      audioPlayer.setAttribute('src', `${ASSETS_URL}/${Session.get('current_category')}/${currentTrack}`);
       audioPlayer.play();
     }
   }
@@ -41,7 +42,7 @@ Template.homepage.events({
         currentTrackList = _.shuffle(Session.get('current_category'));
         currentTrack = currentTrackList.shift();
       }
-      audioPlayer.setAttribute('src', `assets/${Session.get('current_category')}/${currentTrack}`);
+      audioPlayer.setAttribute('src', `${ASSETS_URL}/${Session.get('current_category')}/${currentTrack}`);
       audioPlayer.play();
     } else {
       audioPlayer.paused ? audioPlayer.play() : null;
@@ -53,7 +54,7 @@ Template.homepage.events({
   'click .buttons .btn.btn-skip': () => {
     currentTrack = currentTrackList.shift();
     if (currentTrack) {
-      audioPlayer.setAttribute('src', `assets/${Session.get('current_category')}/${currentTrack}`);
+      audioPlayer.setAttribute('src', `${ASSETS_URL}/${Session.get('current_category')}/${currentTrack}`);
       audioPlayer.play();
     }
   }
